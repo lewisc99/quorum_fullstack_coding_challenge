@@ -1,4 +1,4 @@
-using YourApp.Infrastructure;
+using Infrastructure.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,9 +7,13 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddInfrastructure();
+builder.Services.ConfigureAppServices();
+builder.Services.ConfigureCors();
+
 
 var app = builder.Build();
+
+app.UseCors("ReactAppPolicy");
 
 if (app.Environment.IsDevelopment())
 {

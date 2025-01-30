@@ -1,11 +1,11 @@
 ﻿using Infrastructure.Data;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace YourApp.Infrastructure
+namespace Infrastructure.Configuration
 {
-    public static class DependencyInjection
+    public static class ServiceExtensions
     {
-        public static IServiceCollection AddInfrastructure(this IServiceCollection services)
+        public static IServiceCollection ConfigureAppServices(this IServiceCollection services)
         {
             services.AddSingleton<CsvDbContext>();
             return services;
