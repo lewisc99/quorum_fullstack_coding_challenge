@@ -1,0 +1,61 @@
+# Ignore .NET build artifacts
+bin/
+obj/
+*.user
+*.vs/
+*.suo
+*.vscode/
+
+# Ignore Rider / Resharper files
+.idea/
+*.DotSettings.user
+
+# Ignore NuGet packages
+*.nupkg
+packages/
+.nuget/
+project.lock.json
+project.assets.json
+global.json
+
+# Ignore logs and database files
+logs/
+*.log
+*.mdf
+*.ldf
+appsettings.Development.json
+
+# Ignore environment settings
+.env
+.env.local
+
+# Ignore frontend dependencies
+frontend/node_modules/
+frontend/.next/
+frontend/build/
+frontend/dist/
+
+# Ignore compiled TypeScript files
+frontend/**/*.tsbuildinfo
+
+# Ignore React production build
+frontend/.turbo/
+frontend/.cache/
+frontend/.eslintcache/
+
+# Ignore lock files (optional, some teams prefer to commit package-lock.json)
+frontend/package-lock.json
+frontend/yarn.lock
+frontend/pnpm-lock.yaml
+
+# Ignore test coverage
+frontend/coverage/
+backend/coverage/
+
+# Ignore Docker files (if using containers)
+docker-compose.override.yml
+backend/Dockerfile
+
+# Ignore deployment files
+backend/Properties/launchSettings.json
+backend/wwwroot/
