@@ -11,8 +11,8 @@ namespace Domain.Entities
         [ForeignKey("Bill")]
         public int BillId { get; set; }
 
-        public Bill Bill { get; set; }
+        //public Bill Bill { get; set; }
 
-        public ICollection<VoteResult> VoteResults { get; set; } = new List<VoteResult>();
+        //public ICollection<VoteResult> VoteResults { get; set; } = new List<VoteResult>();
     }
 }

@@ -1,21 +1,21 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
     public class Bill
     {
-        [Key]
+        [Key] 
         public int Id { get; set; }
 
-        [Required]
+        [Required] 
         public string Title { get; set; }
 
-        [ForeignKey("Sponsor")]
+        [ForeignKey("Sponsor")] 
         public int SponsorId { get; set; }
 
-        public Legislator Sponsor { get; set; }
+        //public Legislator Sponsor { get; set; } 
 
-        public ICollection<Vote> Votes { get; set; } = new List<Vote>();
+        //public ICollection<Vote> Votes { get; set; } = new List<Vote>();
     }
 }

@@ -7,7 +7,7 @@ namespace Infrastructure.Data
 {
     public class CsvDbContext
     {
-        private readonly string _csvPath = Path.Combine(Directory.GetCurrentDirectory(), "Infrastructure/Data/CsvFiles");
+        private readonly string _csvPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Data", "CsvFiles");
 
         public List<Bill> Bills { get; private set; }
         public List<Legislator> Legislators { get; private set; }
@@ -29,7 +29,13 @@ namespace Infrastructure.Data
                 return new List<T>();
 
             using var reader = new StreamReader(filePath);
-            using var csv = new CsvReader(reader, new CsvConfiguration(CultureInfo.InvariantCulture));
+            var config = new CsvConfiguration(CultureInfo.InvariantCulture)
+            {
+                HasHeaderRecord = true, 
+                
+            };
+
+            using var csv = new CsvReader(reader, config);
             return csv.GetRecords<T>().ToList();
         }
     }
