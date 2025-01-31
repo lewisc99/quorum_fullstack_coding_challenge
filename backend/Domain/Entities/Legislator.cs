@@ -9,7 +9,5 @@ namespace Domain.Entities
 
         [Required]
         public string Name { get; set; }
-
-        public ICollection<VoteResult> VoteResults { get; set; } = new List<VoteResult>();
     }
 }

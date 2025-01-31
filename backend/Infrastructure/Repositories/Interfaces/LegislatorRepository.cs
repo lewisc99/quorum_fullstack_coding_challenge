@@ -21,15 +21,13 @@ namespace Infrastructure.Repositories.Interfaces
                      {
                          LegislatorId = group.Key,
                          LegislatorName = _context.Legislators
-                             .Where(l => l.Id == group.Key)
-                             .Select(l => l.Name)
-                             .FirstOrDefault(),
+                                            .Where(l => l.Id == group.Key)
+                                            .Select(l => l.Name)
+                                            .FirstOrDefault() ?? "Unknown Legislator",
                          SupportedBills = group.Count(v => v.VoteType == 1),
                          OpposedBills = group.Count(v => v.VoteType == 2)
                      })
                      .ToList();
-
-                throw new Exception("error");
 
                 return RepositoryResult<LegislatorVote>.Success(legislatorsVotes);
             }

@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
@@ -8,11 +7,6 @@ namespace Domain.Entities
         [Key]
         public int Id { get; set; }
 
-        [ForeignKey("Bill")]
         public int BillId { get; set; }
-
-        //public Bill Bill { get; set; }
-
-        //public ICollection<VoteResult> VoteResults { get; set; } = new List<VoteResult>();
     }
 }

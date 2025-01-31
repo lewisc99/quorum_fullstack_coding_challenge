@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Domain.Entities
 {
@@ -14,8 +13,5 @@ namespace Domain.Entities
 
         [Required]
         public int VoteType { get; set; }
-
-        //public Legislator Legislator { get; set; }
-        //public Vote Vote { get; set; }
     }
 }

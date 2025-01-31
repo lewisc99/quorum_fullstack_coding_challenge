@@ -39,7 +39,7 @@ namespace Infrastructure.Repositories.Interfaces
                 return RepositoryResult<BillSummary>.Success(billSummaryList);
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 return RepositoryResult<BillSummary>.Error($"Error fetching bills, please try again later");
             }

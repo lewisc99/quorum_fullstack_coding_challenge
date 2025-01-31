@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Domain.Entities
 {
@@ -11,11 +10,6 @@ namespace Domain.Entities
         [Required] 
         public string Title { get; set; }
 
-        [ForeignKey("Sponsor")] 
         public int SponsorId { get; set; }
-
-        //public Legislator Sponsor { get; set; } 
-
-        //public ICollection<Vote> Votes { get; set; } = new List<Vote>();
     }
 }
