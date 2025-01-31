@@ -39,7 +39,7 @@ function App() {
     <Router>
       <AppBar position="static" sx={{ backgroundColor: "#1976d2" }}>
         <Toolbar>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography variant="h6" sx={{ flexGrow: 1, color: "white" }}>
             Coding Challenge
           </Typography>
         </Toolbar>

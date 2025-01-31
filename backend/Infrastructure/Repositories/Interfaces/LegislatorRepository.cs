@@ -6,7 +6,6 @@ namespace Infrastructure.Repositories.Interfaces
 {
     public class LegislatorRepository : ILegislatorRepository
     {
-
         private readonly CsvDbContext _context;
 
         public LegislatorRepository(CsvDbContext context) => _context = context;
@@ -25,7 +24,7 @@ namespace Infrastructure.Repositories.Interfaces
                                             .Select(l => l.Name)
                                             .FirstOrDefault() ?? "Unknown Legislator",
                          SupportedBills = group.Count(v => v.VoteType == 1),
-                         OpposedBills = group.Count(v => v.VoteType == 2)
+                         OpposedBills = group.Count(v => v.VoteType == 2),
                      })
                      .ToList();
 

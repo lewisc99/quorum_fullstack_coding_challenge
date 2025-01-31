@@ -44,6 +44,5 @@ namespace Infrastructure.Repositories.Interfaces
                 return RepositoryResult<BillSummary>.Error($"Error fetching bills, please try again later");
             }
         }
-
     }
 }
