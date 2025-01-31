@@ -38,5 +38,5 @@ If the goal is to create a list of legislators or bills based on existing entiti
 
 ## 4. How long did you spend working on the assignment?
 
-I spent approximately **2.5 days** working on this assignment, starting on **January 29, 2025, at 9:35 PM**.
+I spent approximately **8 hours** working on this assignment, starting on **January 29, 2025, at 9:35 PM**.
 
