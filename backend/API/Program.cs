@@ -9,7 +9,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.ConfigureAppServices();
 builder.Services.ConfigureCors();
-
+builder.Services.ConfigureVersioning();
 
 var app = builder.Build();
 

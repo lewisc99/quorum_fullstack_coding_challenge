@@ -1,33 +1,21 @@
-﻿using Infrastructure.Data;
+﻿using Application.DTOs;
+using Asp.Versioning;
+using Domain.Api;
+using Domain.Repositories.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace API.Controllers
 {
     [Route("api/Legislator")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class LegislatorController : ControllerBase
     {
-        private readonly CsvDbContext _context;
+        private readonly ILegislatorService _service;
 
-        public LegislatorController(CsvDbContext context)
-        {
-            _context = context;
-        }
+        public LegislatorController(ILegislatorService service) => _service = service;
 
-        [HttpGet]
-        public IActionResult GetLegislators()
-        {
-            var legislators = _context.Legislators;
-            return Ok(legislators);
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetBillById(int id)
-        {
-            var bill = _context.Legislators.FirstOrDefault(b => b.Id == id);
-            if (bill == null)
-                return NotFound();
-            return Ok(bill);
-        }
+        [HttpGet("votes")]
+        public ApiResponse<LegislatorVoteDto> GetLegislatorsVotes() => _service.GetLegislatorsVotes();
     }
 }

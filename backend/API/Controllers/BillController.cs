@@ -1,33 +1,21 @@
-﻿using Infrastructure.Data;
+﻿using Application.DTOs;
+using Asp.Versioning;
+using Domain.Api;
+using Domain.Repositories.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace YourApp.WebAPI.Controllers
 {
-    [Route("api/bills")]
+    [Route("api/Bills")]
+    [ApiVersion("1.0")]
     [ApiController]
     public class BillController : ControllerBase
     {
-        private readonly CsvDbContext _context;
+        private readonly IBillService _service;
 
-        public BillController(CsvDbContext context)
-        {
-            _context = context;
-        }
+        public BillController(IBillService service) => _service = service;
 
-        [HttpGet]
-        public IActionResult GetBills()
-        {
-            var bills = _context.Bills;
-            return Ok(bills);
-        }
-
-        [HttpGet("{id}")]
-        public IActionResult GetBillById(int id)
-        {
-            var bill = _context.Bills.FirstOrDefault(b => b.Id == id);
-            if (bill == null)
-                return NotFound();
-            return Ok(bill);
-        }
+        [HttpGet("summary")]
+        public ApiResponse<BillSummaryDto> GetBillsSummary() => _service.GetBillsSummary();
     }
 }
