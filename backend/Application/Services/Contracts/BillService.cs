@@ -14,7 +14,6 @@ namespace Application.Services
 
         public ApiResponse<BillSummaryDto> GetBillsSummary()
         {
-
             RepositoryResult<BillSummary> response = _repository.GetBillsSummary();
 
             if (!response.Status)

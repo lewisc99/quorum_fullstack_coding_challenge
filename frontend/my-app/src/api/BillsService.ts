@@ -1,5 +1,5 @@
 import { BillSummary } from "../types/BillSummary";
-import { apiClient } from "./apiClient"; // Assuming apiClient is in the same folder
+import { apiClient } from "./apiClient";
 
 export const getBillsSummary = async (
   showAlert: (
